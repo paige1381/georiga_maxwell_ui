@@ -20,7 +20,7 @@ class App extends Component {
             name below and provide your email:
           </p>
           <BasicTypeAhead placeholder="Search guests ..." />
-          <input class="form-control" placeholder="Enter your email" />
+          <input className="form-control" placeholder="Enter your email" />
         </section>
         <section className="center">
           <p>

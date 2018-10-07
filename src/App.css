@@ -31,6 +31,10 @@ input {
   margin-top: 20px;
 }
 
+.dropdown-item span {
+  font-size: 16px !important;
+}
+
 input:focus {
   outline: none;
 }
@@ -46,6 +50,10 @@ em {
 strong,
 .menu-heading {
   font-family: "Tex Gyre Adventor Bold";
+}
+
+.rbt-input-hint {
+  opacity: 0;
 }
 
 a {
@@ -189,7 +197,8 @@ li {
 
   p,
   ul,
-  input {
+  input,
+  .dropdown-item span {
     font-size: 14px !important;
   }
 
@@ -198,7 +207,7 @@ li {
     line-height: 22px !important;
   }
 
-  span {
+  uppercase {
     font-size: 16px !important;
   }
 }
