@@ -49,29 +49,29 @@ class BasicTypeAhead extends Component {
     // );
   }
 
-  loadGuestsFromServer = () => {
-    console.log("inside loadGuestsFromServer");
-    fetch("/api/invites/", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      }
-    })
-      .then(data => data.json())
-      .then(res => {
-        if (!res.success) {
-          this.setState({
-            error: res.error
-          });
-        } else
-          this.setState({ data: res.data }, () => console.log(this.state.data));
-      });
-  };
+  // loadGuestsFromServer = () => {
+  //   console.log("inside loadGuestsFromServer");
+  //   fetch("/api/invites/", {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json"
+  //     }
+  //   })
+  //     .then(data => data.json())
+  //     .then(res => {
+  //       if (!res.success) {
+  //         this.setState({
+  //           error: res.error
+  //         });
+  //       } else
+  //         this.setState({ data: res.data }, () => console.log(this.state.data));
+  //     });
+  // };
 
   render() {
     const { multiple, data } = this.state;
-    const options = data.map(x => x.guest);
-    // const options = [{ id: 1, color: "red" }, { id: 2, color: "red" }];
+    // const options = data.map(x => x.guest);
+    const options = [{ id: 1, color: "red" }, { id: 2, color: "red" }];
 
     return (
       <div>
