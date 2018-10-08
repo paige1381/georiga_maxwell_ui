@@ -23,7 +23,7 @@ class BasicTypeAhead extends Component {
   }
 
   componentDidMount() {
-    this.loadGuestsFromServer();
+    // this.loadGuestsFromServer();
     // if (!this.pollInterval) {
     //   this.pollInterval = setInterval(this.loadGuestsFromServer, 10000);
     // }
