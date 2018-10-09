@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import PropTypes from "prop-types";
-import "whatwg-fetch";
+import axios from "axios";
 import Button from "../Button/Button";
 import TableWrapper from "./BasicTypeAhead.style";
 import { Typeahead } from "react-bootstrap-typeahead";
@@ -15,20 +15,23 @@ class BasicTypeAhead extends Component {
     this.state = {
       multiple: false,
       error: null,
-      invite: "",
+      data: [],
+      guests: "",
       email: "",
-      id: ""
+      _id: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTextInput = this.handleTextInput.bind(this);
   }
 
-  componentDidMount() {
-    // this.loadGuestsFromServer();
-    // if (!this.pollInterval) {
-    //   this.pollInterval = setInterval(this.loadGuestsFromServer, 10000);
-    // }
-  }
+  // componentWillMount() {
+  //   this.loadInvitesFromServer();
+  // if (!this.pollInterval) {
+  //   this.pollInterval = setInterval(this.loadGuestsFromServer, 10000);
+  // }
+  // }
 
   // componentWillUnmount() {
   //   if (this.pollInterval) clearInterval(this.pollInterval);
@@ -40,14 +43,14 @@ class BasicTypeAhead extends Component {
     if (evt[0]) {
       this.setState(
         {
-          invite: evt[0].invite,
+          guests: evt[0].guests,
           email: evt[0].email,
-          id: evt[0].id
+          _id: evt[0]._id
         },
         () => {
-          console.log("invite:", this.state.invite);
+          console.log("guests:", this.state.guests);
           console.log("email:", this.state.email);
-          console.log("id:", this.state.id);
+          console.log("_id:", this.state._id);
         }
       );
     }
@@ -64,50 +67,84 @@ class BasicTypeAhead extends Component {
     // );
   }
 
+  handleTextInput(evt) {
+    // console.log("text change", evt.value);
+    this.setState(
+      {
+        email: evt.target.value
+      },
+      () => {
+        console.log(this.state.email);
+      }
+    );
+  }
+
   handleEdit() {
     console.log("Edit");
   }
 
-  // loadGuestsFromServer = () => {
-  //   console.log("inside loadGuestsFromServer");
-  //   fetch("/api/invites/", {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json"
-  //     }
-  //   })
-  //     .then(data => data.json())
-  //     .then(res => {
-  //       if (!res.success) {
-  //         this.setState({
-  //           error: res.error
-  //         });
-  //       } else
-  //         this.setState({ data: res.data }, () => console.log(this.state.data));
-  //     });
-  // };
+  handleSubmit() {
+    console.log("Submit");
+    axios
+      .put(
+        `https://georgia-maxwell-backend.herokuapp.com/invites/${
+          this.state._id
+        }`,
+        {
+          email: this.state.email
+        }
+      )
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  componentWillMount() {
+    console.log("inside loadGuestsFromServer");
+    axios
+      .get("https://georgia-maxwell-backend.herokuapp.com/invites")
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {
+            data: res.data
+          },
+          () => {
+            console.log(this.state.data);
+          }
+        );
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   render() {
-    const { multiple, email } = this.state;
-    // const options = data.map(x => x.guest);
-    const options = [
-      { id: 1, invite: "red", email: "red@test.com" },
-      { id: 2, invite: "green" }
-    ];
+    const { multiple, email, data, guests } = this.state;
+    const options = data;
+
+    console.log(options);
 
     return (
       <div>
         <Typeahead
-          labelKey="invite"
+          labelKey="guests"
           multiple={multiple}
           options={options}
           placeholder={this.props.placeholder}
           onChange={this.handleChange}
         />
-        {email && email.length > 0 ? (
+
+        {guests &&
+        guests.length > 0 &&
+        options.email &&
+        options.email.length > 0 ? (
           <div>
             <p className="center">
-              The following email has already been provided:{" "}
+              The following email has already been provided:
             </p>
             <TableWrapper>
               <tbody>
@@ -120,9 +157,27 @@ class BasicTypeAhead extends Component {
               </tbody>
             </TableWrapper>
           </div>
-        ) : (
-          <input className="form-control" placeholder="Enter your email" />
-        )}
+        ) : null}
+        {guests &&
+        guests.length > 0 &&
+        (!options.email || options.email.length === 0) ? (
+          <TableWrapper>
+            <tbody>
+              <tr>
+                <td className="right">
+                  <input
+                    className="form-control"
+                    placeholder="Enter your email"
+                    onChange={this.handleTextInput}
+                  />
+                </td>
+                <td className="left">
+                  <Button handleClick={this.handleSubmit} text="Submit" />
+                </td>
+              </tr>
+            </tbody>
+          </TableWrapper>
+        ) : null}
       </div>
     );
   }

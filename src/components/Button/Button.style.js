@@ -1,10 +1,10 @@
 import glamorous from "glamorous";
 
-const ButtonWrapper = glamorous.button({
-  border: "1px solid #ced4da",
-  borderRadius: ".25rem",
-  width: "80px",
-  backgroundColor: "white"
+const ButtonWrapper = glamorous.button("form-control", {
+  minWidth: "80px",
+  maxWidth: "120px",
+  backgroundColor: "white",
+  letterSpacing: ".5px"
 });
 ButtonWrapper.displayName = "ButtonWrapper";
 

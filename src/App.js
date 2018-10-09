@@ -38,6 +38,31 @@ class App extends Component {
           <span className="uppercase">Georgia & Maxwell</span>
         </section>
         <section className="center">
+          <h2>Gallery</h2>
+          <div className="gallery">
+            <div className="gallery-row-1">
+              <img
+                alt="photo1"
+                src="https://lh3.googleusercontent.com/uMa3HPVu01TSFG8FaKriQDcaS4sUy9NI8w7q9ZIz2QdxXGM4abu-1x_Xto4O_6ViWDMOXmHqt0g4P_pWNc1Rx6ij08fifn8S-8vPaPLMUmyXJAKDBG-E1gpvY4OdckpsgrK2LPM3mn6Qnsx6JH91ZO4zRPRP-qPOFICCmVvOthZtp30yXsJIkupIv-q9kvKdb3YHy8eTGcs0hC104SCow1j476QHiD3K34e_xmRCfpnX4mmg-RXG9RpwpTw_JzLvLGPUa9MsgCn7Zkrzn_gwDCJmD96TXSoFZFFurUj-SvDXt73l7DlHcZnuPPdujioWwsLl219M7nYfWsjxyJamprhCcTNNK5Tp8ztOIzV2RF2yHWnhYc_jeRubEe4IgrjdDoikkSNVfPWxQnRRf8bhqVvyAFndKnLUy2y3m45QRwlCx4Y6pas2ndvRpuODdRXp5cDd7FESHde7qKMpmXPO93Cirdva5c07MiGoFcH-WeIO8R11pV014ZqQ0wjPkRl4IG0f9Q-HExs7s75nFeb5bNHCKJvgKPpi4pIsuRJmAl3C31mDRkPQ8N9TsY8pgWL0xLgi5664QbgVUcI1U4BF1Pi-25tc5yGkMALw0veTMufw7A0ApPojY2s0-Z4xrdos4iQNTXBti4Ou-8bAJWKpQaiGtb9rwdYhclGCSz4yTnCmzHHuuD7kPuxzcA=w880-h1176-no"
+              />
+              <img
+                alt="photo2"
+                src="https://lh3.googleusercontent.com/X_tIaJmXNJuh6E83PCWZ-Cc5BKZOqvf6Otz8ph4Tvze--FXqnwyHaP_JGnMfzGnqESTrYSUnz6EzDeOnErZsWZY2-Qf-xQQwravvP6LyjNZK6KwHk6A6CrPKw22m4E7JmBHME4jUzWHwRLhkoa4SPC6S4iHMFnzHpRNCscoVVRqt-4A-eDgBOL5JhbTWiKr1cpOEy6kAsLdNvK5WlgcETuP-0AZS70o3CMln6LcxsZLT6VF0qg19pjx6NqqXtC_sW3X3o6ZNISOuVEAwJzNHK4B1GlZTuijV_gqplcPKQZRzgiLHMAG0JAlBdI-NObo3r_-Z4ugHieicieVvjlxqKMui1mZiBHrgvEKZRXbomy49EZCIYo3gNKeky3GsfO8wt1q82RhwKCqIicSGpygoW2uYgy9L7lNK-JOKyN8EkvSvnRMZ6ji4wHQSVtGRO_e3d9qiRPbP3S4IsXxvZA2Lc_2L6VBYsrz62TIJTvFusmgjz6CGvAAdLHlUcInviapOdXYdz--DPbon2sed-fRAmKNbN3XBs-eAFJ2p9NINQORxU5EMLkTWCgXsKWzkzeoHUd4chKgVa9mpYjPWKzFGyWMaNcrYGTtmw2IFkSTm-9Suj8cQR0Wza1Cq4pYTfpL4RRROG-dNA4qY1veTgmXIFQFqSwnEXVxOS2NuNRVpI_BWp-AJnU-hlH0bAA=w480-h640-no"
+              />
+            </div>
+            <div className="gallery-row-2">
+              <img
+                alt="photo3"
+                src="https://lh3.googleusercontent.com/zE14oHh_1MR8kd_MClw2bgyOSA6MRztBVXvE0mFyihHO3deODjf3HE8Ml_ptWUU2GbkwMLozjJyz1Jc7GP81nVCN6KUc1HlkSsKk4QXoWn8ZZwzIQQeh3MF5mmQnmUlCzSrVzUx_9pCsYSlEggLBQQl_Ojd__O1whaBpZBjm-KYYgHyXeS9uII9ZJtdM5M6nZmKAoqX2XavlZ4KTXzm0flBZ9_OB28pG7qhyd7vGPC2eDj1DieZ3SigwS3QWPWNRgz_jNzdwBwWrXvKFQMe6Pv4Q691_9HolB1zTjzPQi2lTUqnWVadbNulvJNEgD3XqzjFp_P35wpybKKwikD4GCnlh4sGYskSsKNLxs1zMBQXKPaVYS9aFCV5_Z1bS9s9d0SVVElqXLAEJcVyvjA44f9t16Tfuymeo943zSUUCU0vFPFy-Y4Am3FuFs5GXor-SIs7MaQdjfojqo8F7NHJy5ZBMcV9rBoNl3gAAmK-uOvddO6YagO3IKftEqLZs9fhymoyuCoLV7VboMuiGra-PokS678r5oP6AoxYQSErvx4cKn7ND8enwTwEFBEsJMISxDXodqfW8TeLR02l5w3wMNiAYsaI5VpNPH6LQ1EDgqJKTZN_JJwyPPmPo75Fm4aZmxZYA3KxwjsUzFYcTxiqlpvDHTCuFxJ6bFsid6iFO-W-1WnP6wr-MbauZsQ=w840-h1176-no"
+              />
+              <img
+                alt="photo4"
+                src="https://lh3.googleusercontent.com/WVRpW1blNCmOTxCV0gQ3VgQ7NLmFMDMH7w0cwRMLCMMGyzXo26puRwGhCTAOLcOACaRIuGnpdp1aeci28Z5PmpNsiCqDDtiutYIUdHxVg0gJqHVIxeA33srz4vZnAwBUI8Gi2GQ0jcmE9QrInrX6iNW3ZQramBNlDOsKBsF0KNlcJ1F0hehZhxN8Ci-yoalCz_2znplnz5nAmgvuRr98Q00WX2nfj99bbxUdvmTdSTS4ZhHAdKv_NKw4RJVIYp2FaLokoRTJt3FNO0oYUoAkDJW1ERZNUFGKq8z7Nxt5cJbDElJ0OzizIzdjG0b8Q5AKIc6I0cESCWQvn1jNAfC1u47n1z6A5-KZuZlaCdvU35SknwH0z3-6s7_0HdLizUpx_B3zaSpPoowNWjfyxjY5_aof9LQoCq7dgouEo73YxlX-nQkqIVY4PDpTjJgWflJxEkcJcCqpEznhu5-fIBOxPB5TF-tG5b9G5RoJISoE6nI4vmy-PTFlwY5hcF-h2X5gc5JSLtCy7yJvHY8s1Cfqxnmo_zCKK7o8GTkszJTEPWdtXqLIiRKyQhn4DRiLFHLHG244OiV500lpIQiwlMphLDwAkBXSvsgeDoz8EHIhi-J4gQsP4APP7Mu7yT-sRbBncXV7wocpGQwecOxE3C4e9tZazqS7us65uD7GFWwk55lZr_CwURpAK1Ursg=w1568-h1176-no"
+              />
+            </div>
+          </div>
+        </section>
+        <section className="center">
           <h2>Location</h2>
           <h3>First Landing State Park</h3>
           <h3>2500 Shore Drive</h3>
@@ -204,13 +229,6 @@ class App extends Component {
               <h4 className="menu-subheading">Sweet Tea & Lemonade</h4>
             </div>
           </div>
-        </section>
-        <section className="center">
-          <h2>Gallery</h2>
-          <img src="https://lh3.googleusercontent.com/uMa3HPVu01TSFG8FaKriQDcaS4sUy9NI8w7q9ZIz2QdxXGM4abu-1x_Xto4O_6ViWDMOXmHqt0g4P_pWNc1Rx6ij08fifn8S-8vPaPLMUmyXJAKDBG-E1gpvY4OdckpsgrK2LPM3mn6Qnsx6JH91ZO4zRPRP-qPOFICCmVvOthZtp30yXsJIkupIv-q9kvKdb3YHy8eTGcs0hC104SCow1j476QHiD3K34e_xmRCfpnX4mmg-RXG9RpwpTw_JzLvLGPUa9MsgCn7Zkrzn_gwDCJmD96TXSoFZFFurUj-SvDXt73l7DlHcZnuPPdujioWwsLl219M7nYfWsjxyJamprhCcTNNK5Tp8ztOIzV2RF2yHWnhYc_jeRubEe4IgrjdDoikkSNVfPWxQnRRf8bhqVvyAFndKnLUy2y3m45QRwlCx4Y6pas2ndvRpuODdRXp5cDd7FESHde7qKMpmXPO93Cirdva5c07MiGoFcH-WeIO8R11pV014ZqQ0wjPkRl4IG0f9Q-HExs7s75nFeb5bNHCKJvgKPpi4pIsuRJmAl3C31mDRkPQ8N9TsY8pgWL0xLgi5664QbgVUcI1U4BF1Pi-25tc5yGkMALw0veTMufw7A0ApPojY2s0-Z4xrdos4iQNTXBti4Ou-8bAJWKpQaiGtb9rwdYhclGCSz4yTnCmzHHuuD7kPuxzcA=w880-h1176-no" />
-          <img src="https://lh3.googleusercontent.com/X_tIaJmXNJuh6E83PCWZ-Cc5BKZOqvf6Otz8ph4Tvze--FXqnwyHaP_JGnMfzGnqESTrYSUnz6EzDeOnErZsWZY2-Qf-xQQwravvP6LyjNZK6KwHk6A6CrPKw22m4E7JmBHME4jUzWHwRLhkoa4SPC6S4iHMFnzHpRNCscoVVRqt-4A-eDgBOL5JhbTWiKr1cpOEy6kAsLdNvK5WlgcETuP-0AZS70o3CMln6LcxsZLT6VF0qg19pjx6NqqXtC_sW3X3o6ZNISOuVEAwJzNHK4B1GlZTuijV_gqplcPKQZRzgiLHMAG0JAlBdI-NObo3r_-Z4ugHieicieVvjlxqKMui1mZiBHrgvEKZRXbomy49EZCIYo3gNKeky3GsfO8wt1q82RhwKCqIicSGpygoW2uYgy9L7lNK-JOKyN8EkvSvnRMZ6ji4wHQSVtGRO_e3d9qiRPbP3S4IsXxvZA2Lc_2L6VBYsrz62TIJTvFusmgjz6CGvAAdLHlUcInviapOdXYdz--DPbon2sed-fRAmKNbN3XBs-eAFJ2p9NINQORxU5EMLkTWCgXsKWzkzeoHUd4chKgVa9mpYjPWKzFGyWMaNcrYGTtmw2IFkSTm-9Suj8cQR0Wza1Cq4pYTfpL4RRROG-dNA4qY1veTgmXIFQFqSwnEXVxOS2NuNRVpI_BWp-AJnU-hlH0bAA=w480-h640-no" />
-          <img src="https://lh3.googleusercontent.com/zE14oHh_1MR8kd_MClw2bgyOSA6MRztBVXvE0mFyihHO3deODjf3HE8Ml_ptWUU2GbkwMLozjJyz1Jc7GP81nVCN6KUc1HlkSsKk4QXoWn8ZZwzIQQeh3MF5mmQnmUlCzSrVzUx_9pCsYSlEggLBQQl_Ojd__O1whaBpZBjm-KYYgHyXeS9uII9ZJtdM5M6nZmKAoqX2XavlZ4KTXzm0flBZ9_OB28pG7qhyd7vGPC2eDj1DieZ3SigwS3QWPWNRgz_jNzdwBwWrXvKFQMe6Pv4Q691_9HolB1zTjzPQi2lTUqnWVadbNulvJNEgD3XqzjFp_P35wpybKKwikD4GCnlh4sGYskSsKNLxs1zMBQXKPaVYS9aFCV5_Z1bS9s9d0SVVElqXLAEJcVyvjA44f9t16Tfuymeo943zSUUCU0vFPFy-Y4Am3FuFs5GXor-SIs7MaQdjfojqo8F7NHJy5ZBMcV9rBoNl3gAAmK-uOvddO6YagO3IKftEqLZs9fhymoyuCoLV7VboMuiGra-PokS678r5oP6AoxYQSErvx4cKn7ND8enwTwEFBEsJMISxDXodqfW8TeLR02l5w3wMNiAYsaI5VpNPH6LQ1EDgqJKTZN_JJwyPPmPo75Fm4aZmxZYA3KxwjsUzFYcTxiqlpvDHTCuFxJ6bFsid6iFO-W-1WnP6wr-MbauZsQ=w840-h1176-no" />
-          <img src="https://lh3.googleusercontent.com/WVRpW1blNCmOTxCV0gQ3VgQ7NLmFMDMH7w0cwRMLCMMGyzXo26puRwGhCTAOLcOACaRIuGnpdp1aeci28Z5PmpNsiCqDDtiutYIUdHxVg0gJqHVIxeA33srz4vZnAwBUI8Gi2GQ0jcmE9QrInrX6iNW3ZQramBNlDOsKBsF0KNlcJ1F0hehZhxN8Ci-yoalCz_2znplnz5nAmgvuRr98Q00WX2nfj99bbxUdvmTdSTS4ZhHAdKv_NKw4RJVIYp2FaLokoRTJt3FNO0oYUoAkDJW1ERZNUFGKq8z7Nxt5cJbDElJ0OzizIzdjG0b8Q5AKIc6I0cESCWQvn1jNAfC1u47n1z6A5-KZuZlaCdvU35SknwH0z3-6s7_0HdLizUpx_B3zaSpPoowNWjfyxjY5_aof9LQoCq7dgouEo73YxlX-nQkqIVY4PDpTjJgWflJxEkcJcCqpEznhu5-fIBOxPB5TF-tG5b9G5RoJISoE6nI4vmy-PTFlwY5hcF-h2X5gc5JSLtCy7yJvHY8s1Cfqxnmo_zCKK7o8GTkszJTEPWdtXqLIiRKyQhn4DRiLFHLHG244OiV500lpIQiwlMphLDwAkBXSvsgeDoz8EHIhi-J4gQsP4APP7Mu7yT-sRbBncXV7wocpGQwecOxE3C4e9tZazqS7us65uD7GFWwk55lZr_CwURpAK1Ursg=w1568-h1176-no" />
         </section>
       </div>
     );
