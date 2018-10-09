@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 // import PropTypes from "prop-types";
 import "whatwg-fetch";
+import Button from "../Button/Button";
+import TableWrapper from "./BasicTypeAhead.style";
 import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.min.css";
 import "react-bootstrap-typeahead/css/Typeahead-bs4.min.css";
@@ -17,8 +19,8 @@ class BasicTypeAhead extends Component {
       email: "",
       id: ""
     };
-    this.pollInterval = null;
     this.handleChange = this.handleChange.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount() {
@@ -62,6 +64,10 @@ class BasicTypeAhead extends Component {
     // );
   }
 
+  handleEdit() {
+    console.log("Edit");
+  }
+
   // loadGuestsFromServer = () => {
   //   console.log("inside loadGuestsFromServer");
   //   fetch("/api/invites/", {
@@ -82,7 +88,7 @@ class BasicTypeAhead extends Component {
   // };
 
   render() {
-    const { multiple, data } = this.state;
+    const { multiple, email } = this.state;
     // const options = data.map(x => x.guest);
     const options = [
       { id: 1, invite: "red", email: "red@test.com" },
@@ -98,11 +104,22 @@ class BasicTypeAhead extends Component {
           placeholder={this.props.placeholder}
           onChange={this.handleChange}
         />
-        {this.state.email && this.state.email.length > 0 ? (
-          <p className="center">
-            The following email has already been provided: <br />
-            {this.state.email}
-          </p>
+        {email && email.length > 0 ? (
+          <div>
+            <p className="center">
+              The following email has already been provided:{" "}
+            </p>
+            <TableWrapper>
+              <tbody>
+                <tr>
+                  <td className="right">{email}</td>
+                  <td className="left">
+                    <Button handleClick={this.handleEdit} />
+                  </td>
+                </tr>
+              </tbody>
+            </TableWrapper>
+          </div>
         ) : (
           <input className="form-control" placeholder="Enter your email" />
         )}

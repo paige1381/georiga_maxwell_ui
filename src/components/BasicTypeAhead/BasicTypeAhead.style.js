@@ -1,9 +1,12 @@
-import React from "react";
 import glamorous from "glamorous";
 
-const TypeAheadWrapper = glamorous.h1({
-  color: "red",
-  fontFamily: "Arial"
+const TableWrapper = glamorous.table({
+  marginTop: "20px",
+  width: "100%",
+  " td": {
+    width: "50%"
+  }
 });
+TableWrapper.displayName = "TableWrapper";
 
-export default TypeAheadWrapper;
+export default TableWrapper;
