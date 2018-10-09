@@ -12,11 +12,10 @@ class BasicTypeAhead extends Component {
     super();
     this.state = {
       multiple: false,
-      data: [],
       error: null,
-      guest: "",
+      invite: "",
       email: "",
-      value: "-1"
+      id: ""
     };
     this.pollInterval = null;
     this.handleChange = this.handleChange.bind(this);
@@ -36,6 +35,20 @@ class BasicTypeAhead extends Component {
 
   handleChange(evt) {
     console.log(evt);
+    if (evt[0]) {
+      this.setState(
+        {
+          invite: evt[0].invite,
+          email: evt[0].email,
+          id: evt[0].id
+        },
+        () => {
+          console.log("invite:", this.state.invite);
+          console.log("email:", this.state.email);
+          console.log("id:", this.state.id);
+        }
+      );
+    }
     // const { selectItem, items, id } = this.props;
     // const { value } = evt.target;
     // const { item } = items[value];
@@ -71,20 +84,28 @@ class BasicTypeAhead extends Component {
   render() {
     const { multiple, data } = this.state;
     // const options = data.map(x => x.guest);
-    const options = ["red", "green"];
+    const options = [
+      { id: 1, invite: "red", email: "red@test.com" },
+      { id: 2, invite: "green" }
+    ];
 
     return (
       <div>
         <Typeahead
-          labelKey="name"
+          labelKey="invite"
           multiple={multiple}
           options={options}
           placeholder={this.props.placeholder}
           onChange={this.handleChange}
         />
-        <input className="form-control" placeholder="Enter your email">
-          {data.email}
-        </input>
+        {this.state.email && this.state.email.length > 0 ? (
+          <p className="center">
+            The following email has already been provided: <br />
+            {this.state.email}
+          </p>
+        ) : (
+          <input className="form-control" placeholder="Enter your email" />
+        )}
       </div>
     );
   }

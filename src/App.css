@@ -28,7 +28,7 @@ body {
 input {
   letter-spacing: 0.5px;
   font-size: 16px !important;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .dropdown-item span {
