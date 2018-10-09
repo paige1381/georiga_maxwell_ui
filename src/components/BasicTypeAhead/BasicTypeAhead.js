@@ -71,7 +71,7 @@ class BasicTypeAhead extends Component {
   render() {
     const { multiple, data } = this.state;
     // const options = data.map(x => x.guest);
-    const options = [{ id: 1, color: "red" }, { id: 2, color: "red" }];
+    const options = ["red", "green"];
 
     return (
       <div>
