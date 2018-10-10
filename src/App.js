@@ -68,7 +68,7 @@ class App extends Component {
           <h3>2500 Shore Drive</h3>
           <h3>Virginia Beach, VA 23451</h3>
         </section>
-        <section className="center">
+        {/* <section className="center">
           <h2>Schedule</h2>
           <table>
             <tbody>
@@ -86,8 +86,8 @@ class App extends Component {
               </tr>
             </tbody>
           </table>
-        </section>
-        <section>
+        </section> */}
+        {/* <section>
           <h2 className="center">FAQ's</h2>
           <ul>
             <li>
@@ -229,7 +229,7 @@ class App extends Component {
               <h4 className="menu-subheading">Sweet Tea & Lemonade</h4>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     );
   }

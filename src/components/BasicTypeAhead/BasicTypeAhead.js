@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
 import axios from "axios";
 import Button from "../Button/Button";
-import { TypeAheadWrapper, TableWrapper } from "./BasicTypeAhead.style";
+import { TypeAheadWrapper, DivWrapper } from "./BasicTypeAhead.style";
 import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.min.css";
 import "react-bootstrap-typeahead/css/Typeahead-bs4.min.css";
@@ -11,8 +10,6 @@ import {
   showEmailEdit,
   isValidEmail
 } from "../../lib/validation.utils.js";
-
-// import { TypeAheadWrapper } from "./TypeAhead.style";
 
 class BasicTypeAhead extends Component {
   constructor() {
@@ -34,18 +31,6 @@ class BasicTypeAhead extends Component {
     this.handleTextInput = this.handleTextInput.bind(this);
   }
 
-  // componentWillMount() {
-  //   this.loadInvitesFromServer();
-  // if (!this.pollInterval) {
-  //   this.pollInterval = setInterval(this.loadGuestsFromServer, 10000);
-  // }
-  // }
-
-  // componentWillUnmount() {
-  //   if (this.pollInterval) clearInterval(this.pollInterval);
-  //   this.pollInterval = null;
-  // }
-
   handleChange(evt) {
     this.setState({
       error: false,
@@ -56,7 +41,6 @@ class BasicTypeAhead extends Component {
       errorMessage: "",
       loading: false
     });
-    console.log(evt);
     if (evt[0]) {
       this.setState(
         {
@@ -65,9 +49,6 @@ class BasicTypeAhead extends Component {
           _id: evt[0]._id
         },
         () => {
-          console.log("guests:", this.state.guests);
-          console.log("email:", this.state.email);
-          console.log("_id:", this.state._id);
           if (this.state.email && this.state.email.length > 0) {
             this.setState(
               {
@@ -84,7 +65,6 @@ class BasicTypeAhead extends Component {
   }
 
   handleTextInput(evt) {
-    // console.log("text change", evt.value);
     this.setState(
       {
         email: evt.target.value
@@ -97,16 +77,15 @@ class BasicTypeAhead extends Component {
 
   handleEdit(evt) {
     this.setState({
-      hasEmail: false
+      hasEmail: false,
+      email: ""
     });
   }
 
   handleSubmit(evt) {
-    console.log("Submit");
     this.setState({
       loading: true
     });
-    console.log("isValidEmail:", isValidEmail(this.state.email));
     if (isValidEmail(this.state.email)) {
       axios
         .put(
@@ -120,7 +99,6 @@ class BasicTypeAhead extends Component {
           }
         )
         .then(res => {
-          console.log(res);
           this.setState(
             {
               hasEmail: true,
@@ -154,14 +132,12 @@ class BasicTypeAhead extends Component {
   }
 
   componentWillMount() {
-    console.log("componentWillMount");
     this.setState({
       loading: true
     });
     axios
       .get("https://georgia-maxwell-backend.herokuapp.com/invites")
       .then(res => {
-        console.log(res);
         this.setState(
           {
             data: res.data,
@@ -193,11 +169,6 @@ class BasicTypeAhead extends Component {
     } = this.state;
     const options = data;
 
-    // console.log(options);
-    // console.log("showEmailInput:", showEmailInput(hasEmail, guests));
-    // console.log("showEmailEdit:", showEmailEdit(hasEmail, guests));
-    // console.log("showEmailError:", showEmailError(email));
-
     return (
       <TypeAheadWrapper>
         <Typeahead
@@ -211,41 +182,31 @@ class BasicTypeAhead extends Component {
         />
 
         {showEmailInput(hasEmail, guests) ? (
-          <TableWrapper>
-            <tbody>
-              <tr>
-                <td className="right">
-                  <input
-                    className={
-                      error ? "form-control error-box" : "form-control"
-                    }
-                    placeholder="Enter your email"
-                    onChange={this.handleTextInput}
-                  />
-                </td>
-                <td className="left">
-                  <Button handleClick={this.handleSubmit} text="Submit" />
-                </td>
-              </tr>
-            </tbody>
-          </TableWrapper>
+          <DivWrapper>
+            <input
+              className={error ? "form-control error-box" : "form-control"}
+              placeholder="Enter your email"
+              onChange={this.handleTextInput}
+            />
+            <div>
+              <Button handleClick={this.handleSubmit} text="Submit" />
+            </div>
+          </DivWrapper>
         ) : null}
 
         {showEmailEdit(hasEmail, guests) ? (
           <div>
-            <p className="center">
+            <p className="center email-message">
               The following email has been associated with this guest(s):
             </p>
-            <TableWrapper>
-              <tbody>
-                <tr>
-                  <td className="right">{email}</td>
-                  <td className="left">
-                    <Button handleClick={this.handleEdit} text="Change" />
-                  </td>
-                </tr>
-              </tbody>
-            </TableWrapper>
+            <DivWrapper>
+              <p>{email}</p>
+              <div className="button-div">
+                <div>
+                  <Button handleClick={this.handleEdit} text="Change" />
+                </div>
+              </div>
+            </DivWrapper>
           </div>
         ) : null}
 

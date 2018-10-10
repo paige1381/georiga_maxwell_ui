@@ -13,6 +13,23 @@
   src: url("./tex-gyre-adventor/texgyreadventor-italic.otf");
 }
 
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: url(https://s3.amazonaws.com/black-dog-travel/sparks_lake/Sparks+Lake-03455.jpg?versionId=null)
+    no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
   padding: 60px 20px 20px 20px;
   background-color: black;
@@ -28,7 +45,8 @@ body {
 input {
   letter-spacing: 0.5px;
   font-size: 16px !important;
-  margin: 20px 0;
+  margin: 20px 0 0;
+  width: 100%;
 }
 
 input:last-child {
@@ -247,7 +265,6 @@ li {
 
   .gallery-row-2 > img {
     width: 100%;
-    height: 300px;
     object-position: 0 20%;
   }
 }
