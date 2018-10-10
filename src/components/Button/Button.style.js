@@ -4,7 +4,10 @@ const ButtonWrapper = glamorous.button("form-control", {
   minWidth: "80px",
   maxWidth: "120px",
   backgroundColor: "white",
-  letterSpacing: ".5px"
+  letterSpacing: ".5px",
+  ":hover": {
+    cursor: "pointer"
+  }
 });
 ButtonWrapper.displayName = "ButtonWrapper";
 

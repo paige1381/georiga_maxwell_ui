@@ -1,6 +1,17 @@
 import glamorous from "glamorous";
 
-const TableWrapper = glamorous.table({
+export const TypeAheadWrapper = glamorous.div({
+  " .error-message": {
+    color: "red",
+    padding: "5px .25rem 0"
+  },
+  " .error-box": {
+    border: "1px solid red"
+  }
+});
+TypeAheadWrapper.displayName = "TypeAheadWrapper";
+
+export const TableWrapper = glamorous.table({
   marginTop: "20px",
   width: "100%",
   " td": {
@@ -8,5 +19,3 @@ const TableWrapper = glamorous.table({
   }
 });
 TableWrapper.displayName = "TableWrapper";
-
-export default TableWrapper;
