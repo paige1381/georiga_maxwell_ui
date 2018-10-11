@@ -68,6 +68,12 @@ class App extends Component {
           <h3>2500 Shore Drive</h3>
           <h3>Virginia Beach, VA 23451</h3>
         </section>
+        <section className="center">
+          <h2 style={{ margin: 0, padding: 0, border: "none" }}>
+            More to come!
+          </h2>
+        </section>
+
         {/* <section className="center">
           <h2>Schedule</h2>
           <table>
