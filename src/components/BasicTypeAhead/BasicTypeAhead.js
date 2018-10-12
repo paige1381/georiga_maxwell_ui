@@ -144,7 +144,7 @@ class BasicTypeAhead extends Component {
             loading: false
           },
           () => {
-            console.log(this.state.data);
+            console.log("guest list loaded");
           }
         );
       })
